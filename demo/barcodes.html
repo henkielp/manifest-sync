@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bard's Bakery - Incoming Delivery</title>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 2px dashed #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .item-name {
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            max-width: 250px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>The Bard's Bakery: Receiving Dock</h1>
+    <p>Point your phone at these labels to test Barcode Lookup Mode.</p>
+
+    <div class="grid" id="barcode-grid"></div>
+
+    <script>
+        const physicalItems = [
+            { code: "427182818282", name: "Prince Hamlet's Poisoned Plum Tart" }, /* Euler's Number */
+            { code: "402997924584", name: "Puck's Pistachio Puff Pastry" }, /* Speed of Light */
+            { code: "466260701505", name: "Horatio's Honest Hazelnut Honey Cake" }, /* Planck Constant */
+            { code: "460221407606", name: "Brooks' Bobbed Bavarian Brownie" }, /* Avogadro's Number */
+            { code: "431415926531", name: "The Tragic Tale Of Romeo And Juliet Red Velvet Cake" }, /* Pi */
+            { code: "411235813217", name: "Menjou's Moustache Macaron" }, /* Fibonacci Sequence */
+            { code: "413703599908", name: "Wittenberg Scholar Sweet Apple Strudel" }, /* Fine-structure Constant */
+            { code: "416180339883", name: "Yorick's Skull Scone" }, /* Golden Ratio */
+            { code: "466743000009", name: "Lady Macbeth's Spotted Shortbread" }, /* Gravitational Constant */
+            { code: "413806490001", name: "Cawdor Castle Butter Croissant" }, /* Boltzmann Constant */
+            { code: "456703744192", name: "Horatio's Steadfast Friendship Cinnamon Loaf" }, /* Stefan-Boltzmann Constant */
+            { code: "496485332123", name: "King Lear's Lemon Pound Cake" }, /* Faraday Constant */
+            { code: "488541878124", name: "Globe Theatre Artisan Loaf" }, /* Vacuum Permittivity */
+            { code: "412566370625", name: "A Midsummer Night's Dreamy Danish" }, /* Vacuum Permeability */
+            { code: "416021766346", name: "Stratford-upon-Avon Strawberry Scone" }, /* Elementary Charge */
+            { code: "483144626187", name: "Birnam Wood Blackberry Pie" }, /* Gas Constant */
+            { code: "410973731568", name: "Much Ado About Marzipan Macarons" }, /* Rydberg Constant */
+            { code: "416726219239", name: "Prospero's Plum And Pomegranate Puff" }, /* Proton Mass */
+            { code: "416749274981", name: "Othello's Orange And Oat Cookie" }, /* Neutron Mass */
+            { code: "491093837012", name: "Iago's Iced Cinnamon Buns" } /* Electron Mass */
+        ];
+
+        const shuffled = physicalItems.sort(() => 0.5 - Math.random());
+        const grid = document.getElementById('barcode-grid');
+
+        shuffled.forEach((item, index) => {
+            const box = document.createElement('div');
+            box.className = 'box';
+            
+            const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.id = `barcode-${index}`;
+            
+            const itemName = document.createElement('div');
+            itemName.className = 'item-name';
+            itemName.innerText = item.name;
+            
+            box.appendChild(svg);
+            box.appendChild(itemName);
+            grid.appendChild(box);
+
+            JsBarcode(`#barcode-${index}`, item.code, {
+                format: "CODE128",
+                width: 2,
+                height: 100,
+                displayValue: true,
+                fontSize: 18,
+                margin: 10
+            });
+        });
+    </script>
+</body>
+</html>
