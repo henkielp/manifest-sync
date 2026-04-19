@@ -24,7 +24,7 @@ A 100% offline Android app that verifies physical deliveries against printed man
 
 The repo includes a synthetic test dataset so you can try the app without real inventory.
 
-**The Manifest:** A 20-item delivery manifest for "The Bard's Bakery" featuring items like *Prince Hamlet's Poisoned Plum Tart*, *Yorick's Skull Scone*, and *Lady Macbeth's Spotted Shortbread*. The UPC numbers are derived from physics constants (Euler's number, Pi, the golden ratio, Planck's constant, etc.). Print this page and photograph it with the app.
+**The Manifest:** A 20-item delivery manifest for "The Bard's Bakery" featuring items like *Prince Hamlet's Poisoned Plum Tart*, *Yorick's Skull Scone*, and *Lady Macbeth's Spotted Shortbread*. The UPC numbers are derived from mathematical and physics constants (Euler's number, Pi, the golden ratio, Planck's constant, etc.). Print this page and photograph it with the app.
 
 **The Barcodes:** An HTML file that displays scannable barcodes for all 20 items in randomized order. [Open the barcode page](https://henkielp.github.io/manifest-sync/demo/barcodes.html) in a browser, or print it for the most realistic testing experience (scanning from paper matches real box conditions).
 
