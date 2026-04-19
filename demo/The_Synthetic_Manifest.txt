@@ -1,0 +1,60 @@
+Pos   UPC Nbr          Item Description
+
+1     2718281828       Prince Hamlet's
+                       Poisoned Plum Tart
+
+      0299792458       Puck's Pistachio
+                       Puff Pastry
+
+      6626070150       Horatio's Honest
+                       Hazelnut Honey Cake
+
+      6022140760       Brooks' Bobbed
+                       Bavarian Brownie
+
+5     3141592653       The Tragic Tale Of
+                       Romeo And Juliet
+                       Red Velvet Cake
+
+      1123581321       Menjou's Moustache Macaron
+
+      1370359990       Wittenberg Scholar
+                       Sweet Apple Strudel
+
+      1618033988       Yorick's Skull Scone
+
+      6674300000       Lady Macbeth's
+                       Spotted Shortbread
+
+10    1380649000       Cawdor Castle
+                       Butter Croissant
+
+      5670374419       Horatio's Steadfast
+                       Friendship Cinnamon Loaf
+
+      9648533212       King Lear's
+                       Lemon Pound Cake
+
+      8854187812       Globe Theatre
+                       Artisan Loaf
+
+      1256637062       A Midsummer Night's
+                       Dreamy Danish
+
+15    1602176634       Stratford-upon-Avon
+                       Strawberry Scone
+
+      8314462618       Birnam Wood
+                       Blackberry Pie
+
+      1097373156       Much Ado About
+                       Marzipan Macarons
+
+      1672621923       Prospero's Plum
+                       And Pomegranate Puff
+
+      1674927498       Othello's Orange
+                       And Oat Cookie
+
+20    9109383701       Iago's Iced
+                       Cinnamon Buns
