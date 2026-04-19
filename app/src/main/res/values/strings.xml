@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Manifest Sync</string>
+
+    <!-- Idle screen -->
+    <string name="idle_title">Offline Manifest\n&amp; Barcode Sync</string>
+    <string name="idle_subtitle">v0.7.0</string>
+    <string name="btn_capture_manifest">Capture Manifest</string>
+
+    <!-- Capturing screen -->
+    <string name="capture_hint">Align the UPC and Description columns\ninside the crop guide</string>
+
+    <!-- Capture Review screen -->
+    <string name="review_title">Verify Cropped Area</string>
+    <string name="review_hint">Make sure all rows are visible and readable</string>
+    <string name="btn_retry">Retry</string>
+    <string name="btn_process">Process OCR</string>
+
+    <!-- Parsing screen -->
+    <string name="parsing_message">Reading manifest…</string>
+
+    <!-- Manifest Ready screen -->
+    <string name="manifest_ready_title">Manifest Loaded</string>
+    <string name="manifest_ready_count">%d items parsed</string>
+    <string name="btn_start_scanning">Start Scanning</string>
+    <string name="btn_add_item">Add Item Manually</string>
+
+    <!-- Scanning screen -->
+    <string name="scan_progress">Scanned: %1$d / %2$d items</string>
+    <string name="scan_hint">Point camera at barcode</string>
+    <string name="btn_view_report">View Report</string>
+
+    <!-- Pending Confirm screen -->
+    <string name="confirm_title">Barcode Detected</string>
+    <string name="confirm_barcode">Barcode: %s</string>
+    <string name="confirm_match">Match: %s</string>
+    <string name="confirm_extra">NOT ON MANIFEST</string>
+    <string name="confirm_scan_count">Scan %1$d of %2$d</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="btn_reject">Reject</string>
+    <string name="confirm_volume_hint">or press Volume Up</string>
+
+    <!-- Reporting screen -->
+    <string name="report_title">Discrepancy Report</string>
+    <string name="tab_missing">Missing</string>
+    <string name="tab_extra">Extras</string>
+    <string name="btn_back_to_scanning">Back to Scanning</string>
+    <string name="missing_empty">All items received!</string>
+    <string name="extra_empty">No extra items scanned</string>
+    <string name="missing_detail">Scanned %1$d of %2$d</string>
+    <string name="extra_detail">Scanned %d time(s)</string>
+
+    <!-- Error screen -->
+    <string name="btn_try_again">Try Again</string>
+
+    <!-- Permissions -->
+    <string name="camera_permission_required">Camera permission is required to scan manifests and barcodes.</string>
+    <string name="camera_permission_denied">Camera permission was denied. Please enable it in Settings to use this app.</string>
+
+    <!-- Help screen -->
+    <string name="help_privacy">This app works completely offline. It requires no Wi-Fi, no cellular data, and no internet connection. Everything runs entirely on the phone.\n\nAll photos taken during use are temporary. They exist in the phone\'s memory only long enough to read the text or barcode, then they are immediately discarded.\n\nNo images are saved to the phone\'s storage.\nNo data is sent to any server.\nNo personal information is collected.\nNo account or login is required.\n\nThe app uses Google\'s machine learning libraries (ML Kit) for reading text and scanning barcodes. These libraries are licensed under the Google APIs Terms of Service and are free to use with no fees and no attribution required. All processing happens on the phone itself.</string>
+
+    <string name="help_quick_start">1. Print the manifest single-sided. Number the rows every 5 items (1, 5, 10, 15, 20...).\n\n2. Tap Capture Manifest. Position the crop guide over the UPC and Description columns. Tap the camera button.\n\n3. Verify the cropped image looks right. Tap Process OCR.\n\n4. Review the page results. Tap Accept if it looks correct, or Retry to recapture.\n\n5. Tap Next Page for additional pages. Overlap slightly with the previous page.\n\n6. Type the expected item count from the manifest footer. Check for warnings.\n\n7. Tap Start Scanning. Point at a barcode and tap the scan button.\n\n8. The app shows the item name and position number. Verify against your paper manifest.\n\n9. After scanning all boxes, tap View Report to check the Multiples tab for items with more than one case.</string>
+
+    <string name="help_full_manual">WHAT THIS APP DOES\n\nManifest Sync helps you verify physical deliveries against printed manifests. Scan the manifest with OCR, then match barcodes on boxes to quickly locate each item on your list. You photograph the printed delivery manifest, and the app reads the UPC numbers using your phone\'s camera. Then you scan barcodes on the physical boxes, and the app tells you which item you\'re holding and where it appears on the manifest.\n\n\nBEFORE YOU START\n\nPrint the manifest single-sided. Double-sided printing makes it harder to look up items while scanning.\n\nNumber the manifest. Write position numbers in the margin every 5 rows (1, 5, 10, 15, 20...). This helps you quickly find items when the app gives you a position number.\n\nHave a pen ready. You will mark items on the paper manifest and mark boxes on the cart as you work.\n\nTap Help on the home screen before starting to review this guide, including privacy information for managers.\n\n\nCAPTURING THE MANIFEST\n\nTap Capture Manifest. The camera opens with a white rectangle (the crop guide) overlaid on the screen.\n\nAlign the crop guide so it covers the UPC number column and the item description column. You do not need to include the Cases column.\n\nDrag corners or edges to resize the rectangle. Tap inside the rectangle and drag to move it without resizing.\n\nThe Light button (top right) toggles the flashlight. The Cancel button (bottom left) returns to the previous screen without losing data.\n\nAfter capturing, verify the cropped image shows all rows clearly. Tap Process OCR to read the text, or Retry to recapture.\n\nReview the page results. An orange warning banner appears if the app detects a possible misread. Tap Accept to add items to your list, or Retry to discard and recapture.\n\nFor additional pages, tap Next Page. A green banner shows the last item from the previous page so you know where to start. Overlap slightly with the previous page to avoid missing items at the boundary. The app automatically removes duplicate UPCs.\n\nAfter all pages, type the expected item count from the manifest footer. If counts don\'t match, an orange warning appears.\n\nTap any item to edit its quantity (all default to 1 case).\n\n\nSCANNING BARCODES\n\nTap Start Scanning. The camera opens zoomed in for barcode reading. The Light button (top right) toggles the flashlight.\n\nPoint at a barcode and tap the scan button (magnifying glass). The app searches for about 2 seconds. Hold the phone steady.\n\nThe app reads both the standard barcode on the side of boxes and the long shipping barcode on case labels.\n\nIf a match is found, the item name and position number are shown. Tap Confirm or Reject.\n\n\nBARCODE LOOKUP MODE (RECOMMENDED)\n\nThe paper manifest is your official record. The app is a lookup tool.\n\n1. Pick up a box, mark a slash (/) on the corner\n2. Scan the barcode\n3. Note the position number\n4. Find it on your paper manifest and circle it\n5. Complete the slash into an X on the box\n\nAfter scanning everything, tap View Report and check the Multiples tab. Items listed there were scanned more than once (multiple cases arrived). Note the quantities on your paper manifest.\n\nWrite the date, your name, and delivery status on the paper manifest.\n\n\nDIGITAL TRACKING MODE\n\nThe app tracks scan counts automatically. After scanning all boxes, tap View Report.\n\nThe Missing tab shows items not yet scanned.\nThe Multiples tab shows items scanned more than once.\nThe Extra tab shows barcodes not on the manifest.\n\n\nTROUBLESHOOTING\n\n\"No barcode detected\" happens often: Hold the phone closer and keep it very still for the full 2 seconds.\n\nOCR missed some items: Check the expected items count warning. Recapture the section that was missed, overlapping with neighboring pages.\n\nItem descriptions look wrong: This is normal. The phone reads text column by column and sometimes combines words from different items. The UPC numbers are correct.\n\nApp matched the wrong item: Some products have nearly identical UPC numbers. Always verify the position number against your paper manifest. Tap Reject if it doesn\'t match.\n\nApp crashes: Reopen and start over. In Barcode Lookup mode, your paper manifest still has all your progress.\n\n\nTECHNICAL NOTES\n\nThe app uses Google\'s ML Kit libraries for text recognition and barcode scanning, licensed under the Google APIs Terms of Service (free, no fees, no attribution required). All processing happens on the phone. No data is sent anywhere. No images are saved.\n\nDesigned and directed by Paul Henkiel, with code generated using AI assistance.\n\nVersion 0.7.0</string>
+</resources>
