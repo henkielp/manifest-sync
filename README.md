@@ -54,7 +54,7 @@ The app is built using GitHub Actions and sideloaded as a debug APK. No Android 
 1. Fork or clone this repository
 2. Push to the `main` branch (or trigger the workflow manually)
 3. Go to the Actions tab and wait for the build to complete
-4. Download the `app-debug.apk` artifact
+4. Download the `manifest-sync.apk` artifact
 5. Transfer the APK to your phone and install it (you may need to enable "Install from unknown sources" in your phone's settings)
 
 ## Technical Details
