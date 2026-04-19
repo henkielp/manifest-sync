@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/helpRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark"
+    android:orientation="vertical">
+
+    <!-- Header with back button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHelpBack"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Back"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/retry_grey" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Help"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Spacer to center the title -->
+        <android.widget.Space
+            android:layout_width="64dp"
+            android:layout_height="1dp" />
+    </LinearLayout>
+
+    <!-- Scrollable content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ================================ -->
+            <!-- PRIVACY & DATA                   -->
+            <!-- ================================ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Privacy &amp; Data"
+                android:textColor="@color/status_complete"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/help_privacy"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/card_background" />
+
+            <!-- ================================ -->
+            <!-- QUICK START GUIDE                -->
+            <!-- ================================ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quick Start Guide"
+                android:textColor="@color/accent"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/help_quick_start"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/card_background" />
+
+            <!-- ================================ -->
+            <!-- FULL MANUAL                      -->
+            <!-- ================================ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Full Manual"
+                android:textColor="@color/primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/help_full_manual"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp" />
+
+            <!-- Bottom padding -->
+            <android.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="32dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
