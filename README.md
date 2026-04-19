@@ -1,4 +1,5 @@
 # Manifest Sync
+[Download the latest APK](https://github.com/henkielp/manifest-sync/releases/latest)
 
 A 100% offline Android app that verifies physical deliveries against printed manifests. Photograph a manifest with your phone's camera, and the app reads the UPC numbers using on-device OCR. Then scan barcodes on boxes to instantly locate each item on your list.
 
