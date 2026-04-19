@@ -1,7 +1,7 @@
 # Manifest Sync - User Manual
 
 **Version:** 0.7.0
-**Last Updated:** March 17, 2026
+**Last Updated:** April 19, 2026
 
 ## What This App Does
 
@@ -89,7 +89,7 @@ All items default to 1 case. If any item has more than 1 case listed on the mani
 
 Tap **Start Scanning**. The camera opens in barcode scanning mode (zoomed in slightly for easier reading).
 
-A **Light OFF / Light ON** button is in the top right corner, same as the capture screen, for barcodes in dark spots between stacked boxes.
+A **Light OFF / Light ON** button is in the top right corner, same as the capture screen, for barcodes in dark spots between stacked boxes. Once turned on, the light stays on through the entire scanning cycle (scan, confirm, reject, next scan) until you turn it off or tap View Report.
 
 Point the camera at a barcode on a box and tap the **scan button** (magnifying glass icon in the center). The app searches for a barcode for about 2 seconds.
 
