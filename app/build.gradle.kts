@@ -15,12 +15,6 @@ android {
         versionName = "0.7.0"
     }
 
-    applicationVariants.all {
-        outputs.all {
-            val output = this as com.android.build.gradle.internal.api.BaseVariantOutputImpl
-            output.outputFileName = "manifest-sync.apk"
-        }
-    }
 
 buildFeatures {
         compose = true
