@@ -232,19 +232,39 @@ class ManifestViewModel : ViewModel() {
         if (cleanBarcode.isEmpty()) return
 
         val processedBarcode = preprocessBarcode(cleanBarcode)
-        val matchResult = findMatchingItem(processedBarcode, manifestItems)
+        val matchIndices = findMatchingItems(processedBarcode, manifestItems)
 
-        val description = if (matchResult != null) {
-            manifestItems[matchResult].description
-        } else {
-            "NOT ON MANIFEST"
+        // Distinct UPC strings among the tied matches. Two or more distinct
+        // strings of equal length is a true ambiguity (the near-identical UPC
+        // case). Multiple indices sharing ONE string are just duplicate
+        // manifest lines, which is normal and not flagged.
+        val distinctUpcs = matchIndices.map { manifestItems[it].upc }.distinct()
+
+        val matchedIndex: Int?
+        val description: String
+        when {
+            matchIndices.isEmpty() -> {
+                matchedIndex = null
+                description = "NOT ON MANIFEST"
+            }
+            distinctUpcs.size > 1 -> {
+                matchedIndex = matchIndices.first()
+                val candidates = matchIndices.joinToString(" / ") { idx ->
+                    "#${idx + 1} ${manifestItems[idx].description}"
+                }
+                description = "CHECK: ALSO MATCHES $candidates"
+            }
+            else -> {
+                matchedIndex = matchIndices.first()
+                description = manifestItems[matchedIndex].description
+            }
         }
 
         _state.value = AppState.PendingConfirm(
             items = manifestItems.toList(),
             extraItems = extraItems.toList(),
             scannedBarcode = processedBarcode,
-            matchedIndex = matchResult,
+            matchedIndex = matchedIndex,
             matchedDescription = description
         )
     }
@@ -362,16 +382,38 @@ class ManifestViewModel : ViewModel() {
     // Internal: Substring Matching Engine
     // -----------------------------------------------------------------------
 
-    internal fun findMatchingItem(
+    /**
+     * Finds manifest items whose UPC appears as a substring of the scanned
+     * barcode, preferring the LONGEST matching UPC.
+     *
+     * Why longest wins:
+     *   A scanned GTIN-14 like "00012345678905" contains both a full 12-digit
+     *   UPC-A ("012345678905") and any shorter manifest UPC that happens to be
+     *   a substring of it (for example a 6-digit "123456" produced by a partial
+     *   OCR read). The longer UPC is the more specific claim, so it is far more
+     *   likely to be the true match. The old first-match-wins loop silently
+     *   rewarded whichever item appeared earlier in the list.
+     *
+     * Return value:
+     *   All item indices tied at the maximum matching UPC length. A list of
+     *   size 0 means no match. Size 1 is a clean match. Size 2+ means either
+     *   duplicate manifest lines (identical UPC strings) or a genuine
+     *   ambiguity (two different UPCs of equal length both matched), and the
+     *   caller decides how to surface that to the user.
+     */
+    internal fun findMatchingItems(
         scannedBarcode: String,
         items: List<ManifestItem>
-    ): Int? {
-        for ((index, item) in items.withIndex()) {
-            if (item.upc.isNotEmpty() && scannedBarcode.contains(item.upc)) {
-                return index
-            }
+    ): List<Int> {
+        val matches = items.withIndex().filter { (_, item) ->
+            item.upc.isNotEmpty() && scannedBarcode.contains(item.upc)
         }
-        return null
+        if (matches.isEmpty()) return emptyList()
+
+        val maxLength = matches.maxOf { it.value.upc.length }
+        return matches
+            .filter { it.value.upc.length == maxLength }
+            .map { it.index }
     }
 
     // -----------------------------------------------------------------------
