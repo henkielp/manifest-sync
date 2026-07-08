@@ -76,4 +76,4 @@ This app was designed and directed by Paul Henkiel. All code was generated using
 ## Known Limitations
 
 - **Item descriptions may merge incorrectly.** OCR reads printed tables column by column, not row by row. Descriptions from adjacent items sometimes get combined. This is cosmetic: the UPC numbers are reliable and drive all barcode matching.
-- **Products with nearly identical UPCs.** If two items differ only in the last digit of their UPC, and OCR drops that digit, the app may match the wrong one. Always verify the position number against your paper manifest.
+- **Products with nearly identical UPCs.** As of v0.7.1, the app prefers the longest matching UPC, and when two different UPCs match a scanned barcode equally, the confirm screen shows a CHECK warning listing both candidates so you can verify against the paper manifest before confirming.
